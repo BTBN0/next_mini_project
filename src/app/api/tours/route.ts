@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
       include: { destination: true },
       where: {
         ...(destinationId ? { destinationId } : {}),
-        ...(q ? { OR: [{ title: { contains: q, mode: 'insensitive' } }, { location: { contains: q, mode: 'insensitive' } }] } : {}),
+        ...(q ? { OR: [{ title: { contains: q } }, { location: { contains: q } }] } : {}),
       },
       orderBy: { createdAt: 'desc' },
     })

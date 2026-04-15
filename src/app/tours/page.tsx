@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import { prisma } from '@/lib/db'
 import { getSession } from '@/lib/auth'
@@ -85,7 +86,7 @@ export default async function ToursPage({ searchParams }: { searchParams: { q?: 
                   <div style={{ padding: '1.25rem' }}>
                     <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 6, color: '#111', lineHeight: 1.3 }}>{tour.title}</div>
                     <div style={{ fontSize: 13, color: '#6b7280', marginBottom: 14, lineHeight: 1.5,
-                      display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      display: '-webkit-box', WebkitLineClamp: 2, overflow: 'hidden' } as React.CSSProperties}>
                       {tour.description}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: 12 }}>
